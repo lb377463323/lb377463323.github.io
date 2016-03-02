@@ -5,8 +5,7 @@
   
   <title>Java值传递-引用传递 | Brian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#区分两者（很重要）
-
+  <meta name="description" content="区分两者（很重要）
 基本数据类型赋值属于值传递；引用类型之间赋值属于引用传递
 值传递传递的是实实在在的变量值；引用传递传递的是对象的引用地址
 值传递后，两个变量改变的是各自的值；引用传递后，两个引用改变的是同一个对象的状态">
@@ -14,18 +13,16 @@
 <meta property="og:title" content="Java值传递-引用传递">
 <meta property="og:url" content="http://yoursite.com/2016/02/29/Java值传递-引用传递/index.html">
 <meta property="og:site_name" content="Brian">
-<meta property="og:description" content="#区分两者（很重要）
-
+<meta property="og:description" content="区分两者（很重要）
 基本数据类型赋值属于值传递；引用类型之间赋值属于引用传递
 值传递传递的是实实在在的变量值；引用传递传递的是对象的引用地址
 值传递后，两个变量改变的是各自的值；引用传递后，两个引用改变的是同一个对象的状态">
 <meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%80%BC%E4%BC%A0%E9%80%92.png">
 <meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.png">
-<meta property="og:updated_time" content="2016-02-29T13:42:24.408Z">
+<meta property="og:updated_time" content="2016-03-02T04:32:24.225Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java值传递-引用传递">
-<meta name="twitter:description" content="#区分两者（很重要）
-
+<meta name="twitter:description" content="区分两者（很重要）
 基本数据类型赋值属于值传递；引用类型之间赋值属于引用传递
 值传递传递的是实实在在的变量值；引用传递传递的是对象的引用地址
 值传递后，两个变量改变的是各自的值；引用传递后，两个引用改变的是同一个对象的状态">
@@ -141,10 +138,6 @@
                             
                                 <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/lb377463323" title="GitHub"></a></li>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
-                            
-                                <li id="QQ"><a class="QQ" target="_blank" href="/377463323" title="QQ"></a></li>
-                            
                         </ul>
                     </nav>
                 </section>
@@ -152,7 +145,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Java-Android-垃圾回收/" style="font-size: 10px;">Java Android 垃圾回收</a>
+                        <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/值传递/" style="font-size: 10px;">值传递</a> <a href="/tags/垃圾回收/" style="font-size: 10px;">垃圾回收</a> <a href="/tags/引用传递/" style="font-size: 10px;">引用传递</a>
                     </div>
                 </section>
                 
@@ -211,10 +204,6 @@
                             
                                 <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/lb377463323" title="GitHub"></a></li>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
-                            
-                                <li id="QQ"><a class="QQ" target="_blank" href="/377463323" title="QQ"></a></li>
-                            
                         </ul>
             </nav>
         </header>                
@@ -247,6 +236,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/值传递/">值传递</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/引用传递/">引用传递</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -254,12 +247,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#区分两者（很重要）</p>
-<ul>
+        <h1 id="区分两者（很重要）"><a href="#区分两者（很重要）" class="headerlink" title="区分两者（很重要）"></a>区分两者（很重要）</h1><ul>
 <li>基本数据类型赋值属于值传递；引用类型之间赋值属于引用传递</li>
 <li>值传递传递的是实实在在的变量值；引用传递传递的是对象的引用地址</li>
 <li>值传递后，两个变量改变的是各自的值；引用传递后，两个引用改变的是同一个对象的状态<a id="more"></a>
-##值传递<br>(形式参数类型是基本数据类型)：方法调用时，实际参数把它的值传递给对应的形式参数，形式参数只是用实际参数的值初始化自己的存储单元内容，是两个不同的存储单元，所以方法执行中形式参数值的改变不影响实际参数的值。<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%80%BC%E4%BC%A0%E9%80%92.png" alt=""></li>
+<h2 id="值传递"><a href="#值传递" class="headerlink" title="值传递"></a>值传递</h2>(形式参数类型是基本数据类型)：方法调用时，实际参数把它的值传递给对应的形式参数，形式参数只是用实际参数的值初始化自己的存储单元内容，是两个不同的存储单元，所以方法执行中形式参数值的改变不影响实际参数的值。<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%80%BC%E4%BC%A0%E9%80%92.png" alt=""></li>
 </ul>
 <p>举例说明：</p>
 <pre><code>public class Test {
@@ -280,7 +272,7 @@
 }
 分析:这就是按值传递的效果，因为此时传入的不是i本身，只是i的值，传递的是i本身的一个副本。
 所以打印出的是(i副本的值)的改变结果2，而后一个打印出的是i的真身没有改变过因此还是是1
-</code></pre><p>##引用传递<br>(形式参数类型是引用数据类型参数)：也称为传地址。方法调用时，实际参数是对象(或数组)，这时实际参数与形式参数指向同一个地址，在方法执行中，对形式参数的操作实际上就是对实际参数的操作，这个结果在方法结束后被保留了下来，所以方法执行中形式参数的改变将会影响实际参数。<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.png" alt=""></p>
+</code></pre><h2 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h2><p>(形式参数类型是引用数据类型参数)：也称为传地址。方法调用时，实际参数是对象(或数组)，这时实际参数与形式参数指向同一个地址，在方法执行中，对形式参数的操作实际上就是对实际参数的操作，这个结果在方法结束后被保留了下来，所以方法执行中形式参数的改变将会影响实际参数。<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92.png" alt=""></p>
 <p>此处就不举例，值传递理解了，引用传递肯定也能理解了</p>
 
       
@@ -293,7 +285,7 @@
         <p><span>本文标题:</span><a href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LiuBing 的个人博客">LiuBing</a></p>
         <p><span>发布时间:</span>2016年02月29日 - 21时13分</p>
-        <p><span>最后更新:</span>2016年02月29日 - 21时42分</p>
+        <p><span>最后更新:</span>2016年03月02日 - 12时32分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/29/Java值传递-引用传递/" title="Java值传递-引用传递">http://yoursite.com/2016/02/29/Java值传递-引用传递/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/29/Java值传递-引用传递/　　作者: LiuBing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -323,7 +315,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#区分两者（很重要）"><span class="toc-number">1.</span> <span class="toc-text">区分两者（很重要）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#值传递"><span class="toc-number">1.1.</span> <span class="toc-text">值传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用传递"><span class="toc-number">1.2.</span> <span class="toc-text">引用传递</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
