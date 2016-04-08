@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android OpenGL ES2.0入门(之一绘制三角形) | Brian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OpenGL ES简介
+OpenGL ES是一个为便携式或嵌入式设备例如：移动电话、监视器等发展的3D绘图API。
+在Android框架中有两个基础类用于使用OpenGL ES创建和处理图形
+GLSurfaceView类是OpenGL ES绘制图形的view容器
+GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android OpenGL ES2.0入门(之一绘制三角形)">
+<meta property="og:url" content="http://yoursite.com/2016/04/08/OpenGL-ES0/index.html">
+<meta property="og:site_name" content="Brian">
+<meta property="og:description" content="OpenGL ES简介
+OpenGL ES是一个为便携式或嵌入式设备例如：移动电话、监视器等发展的3D绘图API。
+在Android框架中有两个基础类用于使用OpenGL ES创建和处理图形
+GLSurfaceView类是OpenGL ES绘制图形的view容器
+GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容">
+<meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/Coordinate.png">
+<meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/Triangle.png">
+<meta property="og:updated_time" content="2016-04-08T13:29:56.130Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android OpenGL ES2.0入门(之一绘制三角形)">
+<meta name="twitter:description" content="OpenGL ES简介
+OpenGL ES是一个为便携式或嵌入式设备例如：移动电话、监视器等发展的3D绘图API。
+在Android框架中有两个基础类用于使用OpenGL ES创建和处理图形
+GLSurfaceView类是OpenGL ES绘制图形的view容器
+GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容">
+<meta name="twitter:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/Coordinate.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Brian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/image.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">LiuBing</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/lb377463323" title="GitHub"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/OpenGl-ES/" style="font-size: 10px;">OpenGl ES</a> <a href="/tags/值传递/" style="font-size: 10px;">值传递</a> <a href="/tags/垃圾回收/" style="font-size: 10px;">垃圾回收</a> <a href="/tags/引用传递/" style="font-size: 10px;">引用传递</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">LiuBing</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/image.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">LiuBing</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/lb377463323" title="GitHub"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-OpenGL-ES0" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/08/OpenGL-ES0/" class="article-date">
+      <time datetime="2016-04-08T08:45:08.000Z" itemprop="datePublished">2016-04-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Android OpenGL ES2.0入门(之一绘制三角形)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGl-ES/">OpenGl ES</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="OpenGL-ES简介"><a href="#OpenGL-ES简介" class="headerlink" title="OpenGL ES简介"></a>OpenGL ES简介</h2><ul>
+<li>OpenGL ES是一个为便携式或嵌入式设备例如：移动电话、监视器等发展的3D绘图API。</li>
+<li>在Android框架中有两个基础类用于使用OpenGL ES创建和处理图形<ul>
+<li>GLSurfaceView类是OpenGL ES绘制图形的view容器</li>
+<li>GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容<a id="more"></a>
+<h2 id="Android使用OpenGL-ES绘制三角形"><a href="#Android使用OpenGL-ES绘制三角形" class="headerlink" title="Android使用OpenGL ES绘制三角形"></a>Android使用OpenGL ES绘制三角形</h2><ul>
+<li>整个过程比较繁琐，代码也挺多的。因为 OpenGL ES 2.0 是以可编程着色器为基础的，这意味着你绘制任何图形都必须有一<br>个合适的着色器装载和绑定，比使用固定管线的桌面版本有更多代码。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-在manifest中声明使用OpenGL-ES-2-0-API"><a href="#1-在manifest中声明使用OpenGL-ES-2-0-API" class="headerlink" title="1. 在manifest中声明使用OpenGL ES 2.0 API"></a>1. 在manifest中声明使用OpenGL ES 2.0 API</h4><pre><code>&lt;uses-feature android:glEsVersion=&quot;0x00020000&quot; android:required=&quot;true&quot; /&gt;
+</code></pre><blockquote>
+<p>0x00020000代表OpenGL ES 2.0版本，3.0版本是0x00030000，3.1版本是0x00030001</p>
+</blockquote>
+<ul>
+<li><p>若应用需要使用纹理压缩（纹理压缩通过减少内存需求和更有效的使用内存带宽使OpenGL ES应用的性能显著增加）功能，还需在manifest声明所支持的压缩格式，如下：</p>
+<p><supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture"></supports-gl-texture></p>
+<supports-gl-texture android:name="GL_OES_compressed_paletted_texture">
+
+</supports-gl-texture></li>
+</ul>
+<h4 id="2-将Activity的ContentView设为GLSurfaceView"><a href="#2-将Activity的ContentView设为GLSurfaceView" class="headerlink" title="2. 将Activity的ContentView设为GLSurfaceView"></a>2. 将Activity的ContentView设为GLSurfaceView</h4><pre><code>public class OpenGLES20Activity extends Activity {
+
+private GLSurfaceView mGLView;
+
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    mGLView = new MyGLSurfaceView(this);
+    setContentView(mGLView);
+        }
+}
+</code></pre><h4 id="3-构造GLSurfaceView对象"><a href="#3-构造GLSurfaceView对象" class="headerlink" title="3. 构造GLSurfaceView对象"></a>3. 构造GLSurfaceView对象</h4><pre><code>class MyGLSurfaceView extends GLSurfaceView {
+
+    private final MyGLRenderer mRenderer;
+
+    public MyGLSurfaceView(Context context){
+        super(context);
+
+        // 创建OpenGL ES 2.0的上下文
+        setEGLContextClientVersion(2);
+
+        mRenderer = new MyGLRenderer();
+
+        //设置Renderer用于绘图
+        setRenderer(mRenderer);
+
+        //只有在绘制数据改变时才绘制view，可以防止GLSurfaceView帧重绘
+        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+    }
+}
+</code></pre><h4 id="4-构造GLSurfaceView-Renderer对象"><a href="#4-构造GLSurfaceView-Renderer对象" class="headerlink" title="4. 构造GLSurfaceView.Renderer对象"></a>4. 构造GLSurfaceView.Renderer对象</h4><ul>
+<li><p>Renderer类提供三个回调方法供Android系统调用，用来计算在GLSurfaceView中绘制什么以及如何绘制。</p>
+<ul>
+<li>onSurfaceCreated()：仅调用一次，用于设置view的OpenGL ES环境</li>
+<li>onDrawFrame()：每次重绘view时调用</li>
+<li>onSurfaceChanged()：当view的几何形状发生变化时调用，比如设备屏幕方向改变时</li>
+</ul>
+<p>public class MyGLRenderer implements GLSurfaceView.Renderer {</p>
+<p>public void onSurfaceCreated(GL10 unused, EGLConfig config) {</p>
+<pre><code>//设置背景色（r,g,b,a）
+GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);//白色不透明
+</code></pre><p>}</p>
+<p>public void onDrawFrame(GL10 unused) {</p>
+<pre><code>//重绘背景色
+GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+</code></pre><p>}</p>
+<p>public void onSurfaceChanged(GL10 unused, int width, int height) {</p>
+<pre><code>//绘制窗口
+GLES20.glViewport(0, 0, width, height);
+</code></pre><p>}<br>}</p>
+</li>
+</ul>
+<h4 id="5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系"><a href="#5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系" class="headerlink" title="5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系"></a>5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系</h4><ul>
+<li>Android屏幕左上角为原点，往右为X正方向，往下为Y正方向</li>
+<li>Android屏幕的中心点坐标为OpenGL的原点，方向如下图，并且最大和最小值为1和-1</li>
+<li>也就是说OpenGL的（-1,1,0）为屏幕的右上角，</li>
+</ul>
+<p><img src="http://7xrcwc.com1.z0.glb.clouddn.com/Coordinate.png" alt=""></p>
+<h4 id="6-定义一个三角形"><a href="#6-定义一个三角形" class="headerlink" title="6. 定义一个三角形"></a>6. 定义一个三角形</h4><pre><code>public class Triangle {
+
+    private FloatBuffer vertexBuffer;
+
+    //设置每个顶点的坐标数
+    static final int COORDS_PER_VERTEX = 3;
+    //设置三角形顶点数组
+    static float triangleCoords[] = {   //默认按逆时针方向绘制
+         0.0f,  1.0f, 0.0f, // 顶点
+        -1.0f, -0.0f, 0.0f, // 左下角
+         1.0f, -0.0f, 0.0f  // 右下角
+};
+
+// 设置三角形颜色和透明度（r,g,b,a）
+float color[] = {0.0f, 1.0f, 0f, 1.0f};//绿色不透明
+
+public Triangle() {
+    // 初始化顶点字节缓冲区，用于存放形状的坐标
+    ByteBuffer bb = ByteBuffer.allocateDirect(
+            //(每个浮点数占用4个字节
+            triangleCoords.length * 4);
+    //设置使用设备硬件的原生字节序
+    bb.order(ByteOrder.nativeOrder());
+
+    //从ByteBuffer中创建一个浮点缓冲区
+    vertexBuffer = bb.asFloatBuffer();
+    // 把坐标都添加到FloatBuffer中
+    vertexBuffer.put(triangleCoords);
+    //设置buffer从第一个坐标开始读 
+    vertexBuffer.position(0);
+    }
+}
+</code></pre><h4 id="7-在MyGLRenderer中初始化三角形形状"><a href="#7-在MyGLRenderer中初始化三角形形状" class="headerlink" title="7. 在MyGLRenderer中初始化三角形形状"></a>7. 在MyGLRenderer中初始化三角形形状</h4><pre><code>private Triangle mTriangle;
+public void onSurfaceCreated(GL10 unused, EGLConfig config) {
+    ...
+    //初始化三角形
+    mTriangle = new Triangle();
+}
+</code></pre><h4 id="8-绘制三角形形状"><a href="#8-绘制三角形形状" class="headerlink" title="8. 绘制三角形形状"></a>8. 绘制三角形形状</h4><p>使用OpenGL ES 2.0绘制一个定义好的形状需要大量的代码，因为必须提供给图形渲染管道很多细节信息</p>
+<ul>
+<li>VertexShader：用于渲染形状的顶点的OpenGL ES图形代码</li>
+<li>FragmentShader：用于渲染形状的外观（颜色或纹理）的OpenGL ES代码</li>
+<li>Program：一个OpenGL ES对象，包含了你想要用来绘制一个或多个形状的shader</li>
+</ul>
+<p>至少需要一个vertex shader来绘制一个形状和一个fragment shader来为形状着色</p>
+<pre><code>public class Triangle {
+
+    private final String vertexShaderCode =
+        &quot;attribute vec4 vPosition;&quot; +
+        &quot;void main() {&quot; +
+        &quot;  gl_Position = vPosition;&quot; +
+        &quot;}&quot;;
+
+    private final String fragmentShaderCode =
+        &quot;precision mediump float;&quot; +
+        &quot;uniform vec4 vColor;&quot; +
+        &quot;void main() {&quot; +
+        &quot;  gl_FragColor = vColor;&quot; +
+        &quot;}&quot;;
+
+    ...
+}
+</code></pre><p> Shader包含OpenGL Shading Language(GLSL)代码，必须在OpenGL ES环境下先编译再使用。想要编译这些代码，需要在你的Renderer类中创建一个工具类方法：</p>
+<pre><code>public static int loadShader(int type, String shaderCode){
+
+    //创建一个vertex shader类型(GLES20.GL_VERTEX_SHADER)
+    //或一个fragment shader类型(GLES20.GL_FRAGMENT_SHADER)
+    int shader = GLES20.glCreateShader(type);
+
+    // 将源码添加到shader并编译它
+    GLES20.glShaderSource(shader, shaderCode);
+    GLES20.glCompileShader(shader);
+
+    return shader;
+}
+</code></pre><p>在三角形类中编译shader代码，并将它们添加到一个OpenGL ES program 对象中，然后链接这个program</p>
+<pre><code>public class Triangle() {
+...
+
+private final int mProgram;
+
+public Triangle() {
+    ...
+    // 编译shader代码
+    int vertexShader = MyGLRenderer.loadShader(GLES20.GL_VERTEX_SHADER,
+                                    vertexShaderCode);
+    int fragmentShader = MyGLRenderer.loadShader(GLES20.GL_FRAGMENT_SHADER,
+                                    fragmentShaderCode);
+
+    // 创建空的OpenGL ES Program
+    mProgram = GLES20.glCreateProgram();
+
+    // 将vertex shader添加到program
+    GLES20.glAttachShader(mProgram, vertexShader);
+
+    // 将fragment shader添加到program
+    GLES20.glAttachShader(mProgram, fragmentShader);
+
+    // 创建可执行的 OpenGL ES program  
+    GLES20.glLinkProgram(mProgram);
+    }
+}
+</code></pre><p>在三角形类中创建一个draw()方法负责绘制形状</p>
+<pre><code>private int mPositionHandle;
+private int mColorHandle;
+
+private final int vertexCount = triangleCoords.length / COORDS_PER_VERTEX;
+private final int vertexStride = COORDS_PER_VERTEX * 4; // 4 bytes per vertex
+
+public void draw() {
+    // 添加program到OpenGL ES环境中
+    GLES20.glUseProgram(mProgram);
+
+    // 获取指向vertex shader的成员vPosition的handle 
+    mPositionHandle = GLES20.glGetAttribLocation(mProgram, &quot;vPosition&quot;);
+
+    // 启用一个指向三角形的顶点数组的handle
+    GLES20.glEnableVertexAttribArray(mPositionHandle);
+
+    //准备三角形的坐标数据
+    GLES20.glVertexAttribPointer(mPositionHandle, COORDS_PER_VERTEX,
+                                 GLES20.GL_FLOAT, false,
+                                 vertexStride, vertexBuffer);
+
+    // 获取指向fragment shader的成员vColor的handle
+    mColorHandle = GLES20.glGetUniformLocation(mProgram, &quot;vColor&quot;);
+
+    //  绘制三角形
+    GLES20.glUniform4fv(mColorHandle, 1, color, 0);
+
+    // Draw the triangle
+    GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
+
+    // 禁用指向三角形的顶点数组 
+    GLES20.glDisableVertexAttribArray(mPositionHandle);
+}
+</code></pre><h4 id="9-在Render类中的onDrawFrame-方法中调用draw-方法"><a href="#9-在Render类中的onDrawFrame-方法中调用draw-方法" class="headerlink" title="9. 在Render类中的onDrawFrame()方法中调用draw()方法"></a>9. 在Render类中的onDrawFrame()方法中调用draw()方法</h4><pre><code>public void onDrawFrame(GL10 unused) {
+    ...
+
+    mTriangle.draw();
+}
+</code></pre><p>此时运行程序显示如下图：<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/Triangle.png" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LiuBing 的个人博客">LiuBing</a></p>
+        <p><span>发布时间:</span>2016年04月08日 - 16时45分</p>
+        <p><span>最后更新:</span>2016年04月08日 - 21时29分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/08/OpenGL-ES0/" title="Android OpenGL ES2.0入门(之一绘制三角形)">http://yoursite.com/2016/04/08/OpenGL-ES0/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/08/OpenGL-ES0/　　作者: LiuBing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/29/Java值传递-引用传递/">
+                    Java值传递-引用传递
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenGL-ES简介"><span class="toc-number">1.</span> <span class="toc-text">OpenGL ES简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android使用OpenGL-ES绘制三角形"><span class="toc-number">2.</span> <span class="toc-text">Android使用OpenGL ES绘制三角形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在manifest中声明使用OpenGL-ES-2-0-API"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 在manifest中声明使用OpenGL ES 2.0 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-将Activity的ContentView设为GLSurfaceView"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 将Activity的ContentView设为GLSurfaceView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-构造GLSurfaceView对象"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 构造GLSurfaceView对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-构造GLSurfaceView-Renderer对象"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 构造GLSurfaceView.Renderer对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-定义一个三角形"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 定义一个三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在MyGLRenderer中初始化三角形形状"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 在MyGLRenderer中初始化三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-绘制三角形形状"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 绘制三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-在Render类中的onDrawFrame-方法中调用draw-方法"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 在Render类中的onDrawFrame()方法中调用draw()方法</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/08/OpenGL-ES0/" data-title="Android OpenGL ES2.0入门(之一绘制三角形)" data-url="http://yoursite.com/2016/04/08/OpenGL-ES0/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lb377463323"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/29/Java值传递-引用传递/" title="下一篇: Java值传递-引用传递">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/java-0/">Java垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 LiuBing
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
