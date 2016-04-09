@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Brian</title>
+  <title>Google Java编程风格指南 | Brian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Go on Fighting">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Brian">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="转自：Google Java编程风格指南,Google Java Style
+1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则， 我们才认为它符合Google的Java编程风格。
+与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题， 同时也讨论一些约定及编码标准。然而，这份文档主要侧重于我们所普遍遵循的规则， 对于那些不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google Java编程风格指南">
+<meta property="og:url" content="http://yoursite.com/2016/04/09/JavaStyle/index.html">
 <meta property="og:site_name" content="Brian">
-<meta property="og:description" content="Go on Fighting">
+<meta property="og:description" content="转自：Google Java编程风格指南,Google Java Style
+1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则， 我们才认为它符合Google的Java编程风格。
+与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题， 同时也讨论一些约定及编码标准。然而，这份文档主要侧重于我们所普遍遵循的规则， 对于那些不">
+<meta property="og:updated_time" content="2016-04-09T06:12:41.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brian">
-<meta name="twitter:description" content="Go on Fighting">
+<meta name="twitter:title" content="Google Java编程风格指南">
+<meta name="twitter:description" content="转自：Google Java编程风格指南,Google Java Style
+1 前言这份文档是Google Java编程风格规范的完整定义。当且仅当一个Java源文件符合此文档中的规则， 我们才认为它符合Google的Java编程风格。
+与其它的编程风格指南一样，这里所讨论的不仅仅是编码格式美不美观的问题， 同时也讨论一些约定及编码标准。然而，这份文档主要侧重于我们所普遍遵循的规则， 对于那些不">
   
     <link rel="alternative" href="/atom.xml" title="Brian" type="application/atom+xml">
   
@@ -28,9 +35,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -38,8 +42,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -199,9 +203,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-JavaStyle" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaStyle" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/04/09/JavaStyle/" class="article-date">
@@ -217,12 +219,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/09/JavaStyle/">Google Java编程风格指南</a>
+    <h1 class="article-title" itemprop="name">
+      Google Java编程风格指南
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaGuide/">JavaGuide</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -574,282 +587,171 @@ public int method(String p1) { ... }
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaGuide/">JavaGuide</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-OpenGL-ES0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/OpenGL-ES0/" class="article-date">
-      <time datetime="2016-04-08T08:45:08.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="OpenGL-ES简介"><a href="#OpenGL-ES简介" class="headerlink" title="OpenGL ES简介"></a>OpenGL ES简介</h2><ul>
-<li>OpenGL ES是一个为便携式或嵌入式设备例如：移动电话、监视器等发展的3D绘图API。</li>
-<li>在Android框架中有两个基础类用于使用OpenGL ES创建和处理图形<ul>
-<li>GLSurfaceView类是OpenGL ES绘制图形的view容器</li>
-<li>GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGl-ES/">OpenGl ES</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/OpenGL-ES0/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/09/JavaStyle/">Google Java编程风格指南</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LiuBing 的个人博客">LiuBing</a></p>
+        <p><span>发布时间:</span>2016年04月09日 - 14时08分</p>
+        <p><span>最后更新:</span>2016年04月09日 - 14时12分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/09/JavaStyle/" title="Google Java编程风格指南">http://yoursite.com/2016/04/09/JavaStyle/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/09/JavaStyle/　　作者: LiuBing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Java值传递-引用传递" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/29/Java值传递-引用传递/" class="article-date">
-      <time datetime="2016-02-29T13:13:34.000Z" itemprop="datePublished">2016-02-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="区分两者（很重要）"><a href="#区分两者（很重要）" class="headerlink" title="区分两者（很重要）"></a>区分两者（很重要）</h1><ul>
-<li>基本数据类型赋值属于值传递；引用类型之间赋值属于引用传递</li>
-<li>值传递传递的是实实在在的变量值；引用传递传递的是对象的引用地址</li>
-<li>值传递后，两个变量改变的是各自的值；引用传递后，两个引用改变的是同一个对象的状态
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/值传递/">值传递</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/引用传递/">引用传递</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/29/Java值传递-引用传递/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-  
-    <article id="post-java-0" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/28/java-0/" class="article-date">
-      <time datetime="2016-02-28T13:17:42.000Z" itemprop="datePublished">2016-02-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/java-0/">Java垃圾回收机制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Java语言建立了垃圾回收机制，用以跟踪正在使用的对象和发现并回收不再使用(引用)的对象。<font color=red>就是说,每隔一段时间java虚拟机会自动检测内存中是否存在没用的程序代码在占用内存,如果是的话就会把这些没用的或者使用过的内存中的代码清理掉,一般是说回收了垃圾。</font></p>
-<blockquote>
-<p>该机制可以有效防范动态内存分配中可能发生的两个危险：因内存垃圾过多而引发的内存耗尽，以及不恰当的内存释放所造成的内存非法引用。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/垃圾回收/">垃圾回收</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/28/java-0/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/28/hello-world/" class="article-date">
-      <time datetime="2016-02-28T09:55:38.952Z" itemprop="datePublished">2016-02-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/hello-world/">Hello World</a>
-    </h1>
-  
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/08/OpenGL-ES0/">
+                    Android OpenGL ES2.0入门(之一绘制三角形)
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/28/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">1.</span> <span class="toc-text">1 前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-术语说明"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 术语说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-指南说明"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 指南说明</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-源文件基础"><span class="toc-number">2.</span> <span class="toc-text">2 源文件基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-文件名"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 文件名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-文件编码：UTF-8"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 文件编码：UTF-8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-特殊字符"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-空白字符"><span class="toc-number">2.3.1.</span> <span class="toc-text">2.3.1 空白字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-特殊转义序列"><span class="toc-number">2.3.2.</span> <span class="toc-text">2.3.2 特殊转义序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-非ASCII字符"><span class="toc-number">2.3.3.</span> <span class="toc-text">2.3.3 非ASCII字符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-源文件结构"><span class="toc-number">3.</span> <span class="toc-text">3 源文件结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-许可证或版权信息"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 许可证或版权信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-package语句"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 package语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-import语句"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 import语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-import不要使用通配符"><span class="toc-number">3.3.1.</span> <span class="toc-text">3.3.1 import不要使用通配符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-不要换行"><span class="toc-number">3.3.2.</span> <span class="toc-text">3.3.2 不要换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-顺序和间距"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.3.3 顺序和间距</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-类声明"><span class="toc-number">3.4.</span> <span class="toc-text">3.4 类声明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-只有一个顶级类声明"><span class="toc-number">3.4.1.</span> <span class="toc-text">3.4.1 只有一个顶级类声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-类成员顺序"><span class="toc-number">3.4.2.</span> <span class="toc-text">3.4.2 类成员顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-2-1-重载：永不分离"><span class="toc-number">3.4.2.1.</span> <span class="toc-text">3.4.2.1 重载：永不分离</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-格式"><span class="toc-number">4.</span> <span class="toc-text">4 格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-大括号"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 大括号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-使用大括号-即使是可选的"><span class="toc-number">4.1.1.</span> <span class="toc-text">4.1.1 使用大括号(即使是可选的)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-非空块：K-amp-R-风格"><span class="toc-number">4.1.2.</span> <span class="toc-text">4.1.2 非空块：K & R 风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-空块：可以用简洁版本"><span class="toc-number">4.1.3.</span> <span class="toc-text">4.1.3 空块：可以用简洁版本</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-块缩进：2个空格"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 块缩进：2个空格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-一行一个语句"><span class="toc-number">4.3.</span> <span class="toc-text">4.3 一行一个语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-列限制：80或100"><span class="toc-number">4.4.</span> <span class="toc-text">4.4 列限制：80或100</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-自动换行"><span class="toc-number">4.5.</span> <span class="toc-text">4.5 自动换行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-1-从哪里断开"><span class="toc-number">4.5.1.</span> <span class="toc-text">4.5.1 从哪里断开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-2-自动换行时缩进至少-4个空格"><span class="toc-number">4.5.2.</span> <span class="toc-text">4.5.2 自动换行时缩进至少+4个空格</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-6-空白"><span class="toc-number">5.</span> <span class="toc-text">4.6 空白</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-1-垂直空白"><span class="toc-number">5.0.1.</span> <span class="toc-text">4.6.1 垂直空白</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-2-水平空白"><span class="toc-number">5.0.2.</span> <span class="toc-text">4.6.2 水平空白</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-3-水平对齐：不做要求"><span class="toc-number">5.0.3.</span> <span class="toc-text">4.6.3 水平对齐：不做要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-7-用小括号来限定组：推荐"><span class="toc-number">5.1.</span> <span class="toc-text">4.7 用小括号来限定组：推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-8-具体结构"><span class="toc-number">5.2.</span> <span class="toc-text">4.8 具体结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-1-枚举类"><span class="toc-number">5.2.1.</span> <span class="toc-text">4.8.1 枚举类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-2-变量声明"><span class="toc-number">5.2.2.</span> <span class="toc-text">4.8.2 变量声明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-2-1-每次只声明一个变量"><span class="toc-number">5.2.2.1.</span> <span class="toc-text">4.8.2.1 每次只声明一个变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-2-2-需要时才声明，并尽快进行初始化"><span class="toc-number">5.2.2.2.</span> <span class="toc-text">4.8.2.2 需要时才声明，并尽快进行初始化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-3-数组"><span class="toc-number">5.2.3.</span> <span class="toc-text">4.8.3 数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-3-1-数组初始化：可写成块状结构"><span class="toc-number">5.2.3.1.</span> <span class="toc-text">4.8.3.1 数组初始化：可写成块状结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-3-2-非C风格的数组声明"><span class="toc-number">5.2.3.2.</span> <span class="toc-text">4.8.3.2 非C风格的数组声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-4-switch语句"><span class="toc-number">5.2.3.3.</span> <span class="toc-text">4.8.4 switch语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-4-1-缩进"><span class="toc-number">5.2.3.4.</span> <span class="toc-text">4.8.4.1 缩进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-4-2-Fall-through：注释"><span class="toc-number">5.2.3.5.</span> <span class="toc-text">4.8.4.2 Fall-through：注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-4-3-default的情况要写出来"><span class="toc-number">5.2.3.6.</span> <span class="toc-text">4.8.4.3 default的情况要写出来</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-5-注解-Annotations"><span class="toc-number">5.2.3.7.</span> <span class="toc-text">4.8.5 注解(Annotations)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-6-注释"><span class="toc-number">5.2.4.</span> <span class="toc-text">4.8.6 注释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-6-1-块注释风格"><span class="toc-number">5.2.4.1.</span> <span class="toc-text">4.8.6.1 块注释风格</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8-7-Modifiers"><span class="toc-number">5.2.5.</span> <span class="toc-text">4.8.7 Modifiers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-命名约定"><span class="toc-number">6.</span> <span class="toc-text">5 命名约定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-对所有标识符都通用的规则"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 对所有标识符都通用的规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-标识符类型的规则"><span class="toc-number">6.2.</span> <span class="toc-text">5.2 标识符类型的规则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-包名"><span class="toc-number">6.2.1.</span> <span class="toc-text">5.2.1 包名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-类名"><span class="toc-number">6.2.2.</span> <span class="toc-text">5.2.2 类名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-3-方法名"><span class="toc-number">6.2.3.</span> <span class="toc-text">5.2.3 方法名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-4-常量名"><span class="toc-number">6.2.4.</span> <span class="toc-text">5.2.4 常量名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-5-非常量字段名"><span class="toc-number">6.2.5.</span> <span class="toc-text">5.2.5 非常量字段名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-6-参数名"><span class="toc-number">6.2.6.</span> <span class="toc-text">5.2.6 参数名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-7-局部变量名"><span class="toc-number">6.2.7.</span> <span class="toc-text">5.2.7 局部变量名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-8-类型变量名"><span class="toc-number">6.2.8.</span> <span class="toc-text">5.2.8 类型变量名</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-3-驼峰式命名法-CamelCase"><span class="toc-number">7.</span> <span class="toc-text">5.3 驼峰式命名法(CamelCase)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-编程实践"><span class="toc-number">8.</span> <span class="toc-text">6 编程实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-Override：能用则用"><span class="toc-number">8.1.</span> <span class="toc-text">6.1 @Override：能用则用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-捕获的异常：不能忽视"><span class="toc-number">8.2.</span> <span class="toc-text">6.2 捕获的异常：不能忽视</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-静态成员：使用类进行调用"><span class="toc-number">8.3.</span> <span class="toc-text">6.3 静态成员：使用类进行调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-Finalizers-禁用"><span class="toc-number">8.4.</span> <span class="toc-text">6.4 Finalizers: 禁用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Javadoc"><span class="toc-number">9.</span> <span class="toc-text">7 Javadoc</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-格式"><span class="toc-number">9.1.</span> <span class="toc-text">7.1 格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-1-一般形式"><span class="toc-number">9.1.1.</span> <span class="toc-text">7.1.1 一般形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-2-段落"><span class="toc-number">9.1.2.</span> <span class="toc-text">7.1.2 段落</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-3-Javadoc标记"><span class="toc-number">9.1.3.</span> <span class="toc-text">7.1.3 Javadoc标记</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-摘要片段"><span class="toc-number">9.2.</span> <span class="toc-text">7.2 摘要片段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-哪里需要使用Javadoc"><span class="toc-number">9.3.</span> <span class="toc-text">7.3 哪里需要使用Javadoc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-1-例外：不言自明的方法"><span class="toc-number">9.3.1.</span> <span class="toc-text">7.3.1 例外：不言自明的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-2-例外：重写"><span class="toc-number">9.3.2.</span> <span class="toc-text">7.3.2 例外：重写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-3-可选的Javadoc"><span class="toc-number">9.3.3.</span> <span class="toc-text">7.3.3 可选的Javadoc</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
 
 
 
-  
-  
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/09/JavaStyle/" data-title="Google Java编程风格指南" data-url="http://yoursite.com/2016/04/09/JavaStyle/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lb377463323"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/04/08/OpenGL-ES0/" title="下一篇: Android OpenGL ES2.0入门(之一绘制三角形)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/JavaStyle/">Google Java编程风格指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/java-0/">Java垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
