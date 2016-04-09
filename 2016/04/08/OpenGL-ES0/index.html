@@ -21,7 +21,7 @@ GLSurfaceView类是OpenGL ES绘制图形的view容器
 GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容">
 <meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/Coordinate.png">
 <meta property="og:image" content="http://7xrcwc.com1.z0.glb.clouddn.com/Triangle.png">
-<meta property="og:updated_time" content="2016-04-08T13:29:56.130Z">
+<meta property="og:updated_time" content="2016-04-09T10:36:14.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android OpenGL ES2.0入门(之一绘制三角形)">
 <meta name="twitter:description" content="OpenGL ES简介
@@ -148,7 +148,7 @@ GLSurfaceView.Renderer类是用于控制上述view容器中显示什么内容">
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/JavaGuide/" style="font-size: 10px;">JavaGuide</a> <a href="/tags/OpenGl-ES/" style="font-size: 10px;">OpenGl ES</a> <a href="/tags/值传递/" style="font-size: 10px;">值传递</a> <a href="/tags/垃圾回收/" style="font-size: 10px;">垃圾回收</a> <a href="/tags/引用传递/" style="font-size: 10px;">引用传递</a>
+                        <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Google/" style="font-size: 10px;">Google</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/JavaGuide/" style="font-size: 10px;">JavaGuide</a> <a href="/tags/OpenGl-ES/" style="font-size: 15px;">OpenGl ES</a> <a href="/tags/值传递/" style="font-size: 10px;">值传递</a> <a href="/tags/垃圾回收/" style="font-size: 10px;">垃圾回收</a> <a href="/tags/引用传递/" style="font-size: 10px;">引用传递</a>
                     </div>
                 </section>
                 
@@ -326,7 +326,7 @@ GLES20.glViewport(0, 0, width, height);
 </code></pre><p>}<br>}</p>
 </li>
 </ul>
-<h4 id="5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系"><a href="#5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系" class="headerlink" title="5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系"></a>5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系</h4><ul>
+<h4 id="5-在定义三角形之前需了解Android和OpenGL-ES的坐标系"><a href="#5-在定义三角形之前需了解Android和OpenGL-ES的坐标系" class="headerlink" title="5. 在定义三角形之前需了解Android和OpenGL ES的坐标系"></a>5. 在定义三角形之前需了解Android和OpenGL ES的坐标系</h4><ul>
 <li>Android屏幕左上角为原点，往右为X正方向，往下为Y正方向</li>
 <li>Android屏幕的中心点坐标为OpenGL的原点，方向如下图，并且最大和最小值为1和-1</li>
 <li>也就是说OpenGL的（-1,1,0）为屏幕的右上角，</li>
@@ -474,6 +474,7 @@ public void draw() {
     mTriangle.draw();
 }
 </code></pre><p>此时运行程序显示如下图：<br><img src="http://7xrcwc.com1.z0.glb.clouddn.com/Triangle.png" alt=""></p>
+<p>到这里，三角形已绘制完毕，下一篇介绍添加动作及触摸事件，另附链接<a href="http://lb377463323.github.io/2016/04/09/OpenGL-ES1/" target="_blank" rel="external">Android OpenGL ES2.0入门(之二添加动作及触摸事件)</a></p>
 
       
     </div>
@@ -485,7 +486,7 @@ public void draw() {
         <p><span>本文标题:</span><a href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LiuBing 的个人博客">LiuBing</a></p>
         <p><span>发布时间:</span>2016年04月08日 - 16时45分</p>
-        <p><span>最后更新:</span>2016年04月08日 - 21时29分</p>
+        <p><span>最后更新:</span>2016年04月09日 - 18时36分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/08/OpenGL-ES0/" title="Android OpenGL ES2.0入门(之一绘制三角形)">http://yoursite.com/2016/04/08/OpenGL-ES0/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/08/OpenGL-ES0/　　作者: LiuBing" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -521,7 +522,7 @@ public void draw() {
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenGL-ES简介"><span class="toc-number">1.</span> <span class="toc-text">OpenGL ES简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android使用OpenGL-ES绘制三角形"><span class="toc-number">2.</span> <span class="toc-text">Android使用OpenGL ES绘制三角形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在manifest中声明使用OpenGL-ES-2-0-API"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 在manifest中声明使用OpenGL ES 2.0 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-将Activity的ContentView设为GLSurfaceView"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 将Activity的ContentView设为GLSurfaceView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-构造GLSurfaceView对象"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 构造GLSurfaceView对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-构造GLSurfaceView-Renderer对象"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 构造GLSurfaceView.Renderer对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-在定义三角形之前需了解Android和OpenGL-ES的-坐标系"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. 在定义三角形之前需了解Android和OpenGL ES的 坐标系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-定义一个三角形"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 定义一个三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在MyGLRenderer中初始化三角形形状"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 在MyGLRenderer中初始化三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-绘制三角形形状"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 绘制三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-在Render类中的onDrawFrame-方法中调用draw-方法"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 在Render类中的onDrawFrame()方法中调用draw()方法</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenGL-ES简介"><span class="toc-number">1.</span> <span class="toc-text">OpenGL ES简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android使用OpenGL-ES绘制三角形"><span class="toc-number">2.</span> <span class="toc-text">Android使用OpenGL ES绘制三角形</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在manifest中声明使用OpenGL-ES-2-0-API"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 在manifest中声明使用OpenGL ES 2.0 API</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-将Activity的ContentView设为GLSurfaceView"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 将Activity的ContentView设为GLSurfaceView</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-构造GLSurfaceView对象"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 构造GLSurfaceView对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-构造GLSurfaceView-Renderer对象"><span class="toc-number">2.0.4.</span> <span class="toc-text">4. 构造GLSurfaceView.Renderer对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-在定义三角形之前需了解Android和OpenGL-ES的坐标系"><span class="toc-number">2.0.5.</span> <span class="toc-text">5. 在定义三角形之前需了解Android和OpenGL ES的坐标系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-定义一个三角形"><span class="toc-number">2.0.6.</span> <span class="toc-text">6. 定义一个三角形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-在MyGLRenderer中初始化三角形形状"><span class="toc-number">2.0.7.</span> <span class="toc-text">7. 在MyGLRenderer中初始化三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-绘制三角形形状"><span class="toc-number">2.0.8.</span> <span class="toc-text">8. 绘制三角形形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-在Render类中的onDrawFrame-方法中调用draw-方法"><span class="toc-number">2.0.9.</span> <span class="toc-text">9. 在Render类中的onDrawFrame()方法中调用draw()方法</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -623,7 +624,7 @@ public void draw() {
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/JavaStyle/">Google Java编程风格指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/java-0/">Java垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/OpenGL-ES1/">Android OpenGL ES2.0入门(之二添加动作及触摸事件)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/09/JavaStyle/">Google Java编程风格指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/OpenGL-ES0/">Android OpenGL ES2.0入门(之一绘制三角形)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/29/Java值传递-引用传递/">Java值传递-引用传递</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/java-0/">Java垃圾回收机制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
